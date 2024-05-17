@@ -47,6 +47,7 @@ body, html {
     margin-right: 20px;
     z-index: 2;
     color: #ffffff;
+    opacity: 0.9;
 }
 
 .terminal h1 {
