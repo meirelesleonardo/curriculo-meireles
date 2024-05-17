@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </li>
             <br>
             <li>
-                <a href="https://meirelesleonardo.github.io/curriculo-meireles/localizacoa.html">
+                <a href="https://meirelesleonardo.github.io/curriculo-meireles/localizacao.html">
                     <i class="far fa-eye"></i> Mais Detalhes
                 </a>
             </li> 
