@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localização</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div id="location"></div>
+    <div id="ip"></div>    
+    <h1>Você Foi Localizado?</h1>
+    <a id="map-link" href="#" target="_blank">Ver no Google Maps</a>
+
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                alert("Geolocalização não é suportada pelo seu navegador.");
+            }
+        }
+
+        function showPosition(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            var ip;
+
+            // Obter o IP do cliente
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    ip = data.ip;
+                    document.getElementById('location').innerHTML = "Latitude: " + latitude + "<br>Longitude: " + longitude;
+                    document.getElementById('ip').innerHTML = "IP: " + ip;
+
+                    // Construir o link para o Google Maps com as coordenadas
+                    var mapLink = "https://www.google.com/maps?q=" + latitude + "," + longitude;
+                    document.getElementById('map-link').href = mapLink;
+                    document.getElementById('map-link').innerText = "Ver no Google Maps";
+                });
+        }
+        
+        // Chama a função para obter a localização quando a página carrega
+        getLocation();
+    </script>
+</body>
+</html>

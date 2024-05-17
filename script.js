@@ -35,7 +35,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 <a href="mailto:meirelesleonardo.ti@gmail.com">
                     <i class="far fa-envelope"></i> meirelesleonardo.ti@gmail.com
                 </a>
-            </li>    
+            </li>
+            <br>
+            <li>
+                <a href="https://meirelesleonardo.github.io/curriculo-meireles/localizacoa.html">
+                    <i class="far fa-eye"></i> Mais Detalhes
+                </a>
+            </li> 
         </ul>
     `;
 
